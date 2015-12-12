@@ -49,5 +49,4 @@ RSpec.describe 'Filter diver applications list', type: :feature do
   describe 'by city and by status' do
     it_behaves_like 'find driver applications'
   end
-
 end
