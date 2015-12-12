@@ -10,6 +10,11 @@ RSpec.describe User, type: :model do
 
   it { is_expected.to have_one(:driver_application).dependent(:destroy) }
 
+  describe 'email uniqueness' do
+    before { create(:user) }
+    it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
+  end
+
   describe '#name' do
     let(:user) { create(:user) }
     let(:first_name) { create(:user) }
