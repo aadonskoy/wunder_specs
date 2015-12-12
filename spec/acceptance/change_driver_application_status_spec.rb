@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-# Filter a list of driver applications by either `status` or `city` or both
+# Mark a driver application as `accepted` or `rejected`
+
 shared_examples_for 'edit driver applications' do
   it 'changes data' do
     expect { edit }.to change { driver_application.reload.status }.from('pending').to(new_status)
